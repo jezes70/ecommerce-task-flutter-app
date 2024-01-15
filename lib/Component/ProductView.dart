@@ -1,97 +1,104 @@
-import 'package:ecommerce/Data/Product.dart';
-import 'package:ecommerce/Utils/Icons.dart';
 import 'package:ecommerce/Utils/Utils.dart';
 import 'package:flutter/material.dart';
 
-class ProductView extends StatelessWidget {
-  const ProductView({super.key});
+class ProductView extends StatefulWidget {
+  final String name;
+  final double price;
+  final String description;
+  final String image;
+
+  const ProductView({
+    Key? key,
+    required this.name,
+    required this.price,
+    required this.description,
+    required this.image,
+  }) : super(key: key);
 
   @override
+  _ProductViewState createState() => _ProductViewState();
+}
+
+class _ProductViewState extends State<ProductView> {
+  @override
   Widget build(BuildContext context) {
-    return buildMainUI(context);
-  }
-
-  Widget buildMainUI(BuildContext context) {
-    return SingleChildScrollView(
-      child: Container(
-        alignment: Alignment.center,
-        width: 400,
+    return Scaffold(
+      appBar: AppBar(
+        title: Text(widget.name),
+      ),
+      body: SingleChildScrollView(
+        padding: EdgeInsets.all(16.0),
         child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
+          crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
-            Utils.sizeBoxHeight(10),
-            if (GetProduct.products.isNotEmpty)
-              GridView.builder(
-                shrinkWrap: true,
-                physics: const NeverScrollableScrollPhysics(),
-                itemCount: GetProduct.products.length,
-                gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-                  crossAxisCount: 2,
-                  crossAxisSpacing: 15,
-                  mainAxisSpacing: 20,
-                  childAspectRatio: 0.90,
+            Card(
+              elevation: 5.0,
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(12.0),
+              ),
+              child: ClipRRect(
+                borderRadius: BorderRadius.circular(12.0),
+                child: Image.asset(
+                  widget.image,
+                  width: double.infinity,
+                  height: 200,
+                  fit: BoxFit.cover,
                 ),
-                itemBuilder: (BuildContext context, int index) {
-                  final item = GetProduct.products[index];
-
-                  return Card(
-                    color: Colors.white,
-                    elevation: 3,
-                    child: Center(
-                      child: Column(
-                        mainAxisAlignment: MainAxisAlignment.spaceAround,
-                        crossAxisAlignment: CrossAxisAlignment.center,
-                        children: [
-                          Container(),
-                          SizedBox(
-                            height: 80,
-                            width: MediaQuery.of(context).size.width,
-                            child: Image.asset(
-                              item.image,
-                              width: MediaQuery.of(context).size.width,
-                              height: 100,
-                              fit: BoxFit.contain,
-                            ),
-                          ),
-                          Container(
-                            alignment: Alignment.center,
-                            child: Text(
-                              item.name,
-                              style: const TextStyle(
-                                  fontWeight: FontWeight.bold, fontSize: 15),
-                            ),
-                          ),
-                          Container(
-                            decoration: const BoxDecoration(
-                              border: Border(
-                                bottom: BorderSide(width: 1.0),
-                              ),
-                            ),
-                            child: const Text(
-                              "Shop Now",
-                              style: TextStyle(
-                                fontWeight: FontWeight.bold,
-                                fontSize: 20,
-                              ),
-                            ),
-                          ),
-                        ],
-                      ),
-                    ),
-                  );
-                },
               ),
-            if (GetProduct.products.isEmpty)
-              Center(
-                child: Column(children: [
-                  Image.asset(
-                    no_records,
-                    width: 100,
+            ),
+            Utils.sizeBoxHeight(20),
+            Text(
+              widget.name,
+              style: TextStyle(
+                fontWeight: FontWeight.bold,
+                fontSize: 24,
+              ),
+            ),
+            Utils.sizeBoxHeight(10),
+            Text(
+              'Price: \$${widget.price}',
+              style: TextStyle(
+                fontSize: 18,
+                color: Theme.of(context).primaryColor,
+              ),
+            ),
+            Utils.sizeBoxHeight(20),
+            Text(
+              'Description:',
+              style: TextStyle(
+                fontWeight: FontWeight.bold,
+                fontSize: 18,
+              ),
+            ),
+            Utils.sizeBoxHeight(10),
+            Text(
+              widget.description,
+              style: TextStyle(
+                fontSize: 16,
+                color: Colors.grey[700],
+              ),
+            ),
+            Utils.sizeBoxHeight(20),
+            ElevatedButton(
+              onPressed: () {
+                // Add functionality for adding the product to the cart or any other action
+              },
+              style: ElevatedButton.styleFrom(
+                backgroundColor: Theme.of(context).primaryColor,
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(10.0),
+                ),
+              ),
+              child: Padding(
+                padding: const EdgeInsets.all(12.0),
+                child: Text(
+                  'Add to Cart',
+                  style: TextStyle(
+                    fontSize: 18,
                   ),
-                  Utils.sizeBoxHeight(20),
-                  const Text("No data available.")
-                ]),
+                ),
               ),
+            ),
           ],
         ),
       ),

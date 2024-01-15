@@ -1,9 +1,9 @@
+import 'package:ecommerce/Component/SectionList.dart';
 import 'package:ecommerce/Utils/Icons.dart';
 import 'package:ecommerce/Utils/Utils.dart';
 import 'package:flutter/material.dart';
 
 import '../Component/Footer.dart';
-import '../Component/ProductView.dart';
 
 class App extends StatefulWidget {
   const App({super.key});
@@ -17,7 +17,23 @@ class AppState extends State<App> {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
-          title: Text("Home"),
+          title: Text(
+            "Task Shopping App",
+            style: TextStyle(color: Colors.white),
+          ),
+          actions: [
+            IconButton(
+              icon: Icon(Icons.search),
+              onPressed: () {},
+            ),
+            IconButton(
+              icon: Icon(Icons.shopping_cart),
+              onPressed: () {},
+            ),
+          ],
+          elevation: 4, // Controls the shadow below the app bar
+          backgroundColor: Colors.orange,
+          iconTheme: IconThemeData(color: Colors.white),
         ),
         body: SingleChildScrollView(
             child: Container(
@@ -36,7 +52,7 @@ class AppState extends State<App> {
             Utils.sizeBoxHeight(20),
             SizedBox(
               width: MediaQuery.of(context).size.width,
-              child: const ProductView(),
+              child: const SectionList(),
             )
           ],
         ))),
