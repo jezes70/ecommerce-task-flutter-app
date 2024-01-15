@@ -102,6 +102,7 @@ class HomeFirstState extends State<HomeFirst> {
                           style: ElevatedButton.styleFrom(
                             backgroundColor:
                                 const Color.fromARGB(255, 6, 61, 106),
+                            elevation: 7,
                           ),
                           child: const Text(
                             "View",

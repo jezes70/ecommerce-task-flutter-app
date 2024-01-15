@@ -17,7 +17,7 @@ class AppState extends State<App> {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
-          title: Text(
+          title: const Text(
             "Task Shopping App",
             style: TextStyle(color: Colors.white),
           ),
@@ -31,7 +31,7 @@ class AppState extends State<App> {
               onPressed: () {},
             ),
           ],
-          elevation: 4, // Controls the shadow below the app bar
+          elevation: 4,
           backgroundColor: Colors.orange,
           iconTheme: IconThemeData(color: Colors.white),
         ),

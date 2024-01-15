@@ -63,10 +63,10 @@ class GetProduct {
     ),
     Product(
       id: 6,
-      name: 'Bluetooth Speaker',
+      name: 'Sound Bar Speaker',
       description:
           'Take your music on the go with our Portable Bluetooth Speaker. Experience high-quality sound and impressive bass in a compact and stylish design. Whether you are at home, in the park, or on the beach, this speaker delivers a premium audio experience. Elevate your music journey with this versatile and portable speaker.',
-      price: 29.99,
+      price: 158.99,
       image: 'images/Sound Box.jpeg',
       category: 'Electronics',
     ),
@@ -84,7 +84,7 @@ class GetProduct {
       name: 'External Hard Drive',
       description:
           'Expand your storage capacity with our high-capacity External Hard Drive. Ideal for backing up important files or expanding your digital library, this hard drive offers reliable and fast data storage. The sleek and compact design ensures portability without compromising on performance. Elevate your storage solutions with this efficient external hard drive.',
-      price: 129.99,
+      price: 15.99,
       image: 'images/Hard Drive.jpeg',
       category: 'Electronics',
     ),

@@ -61,45 +61,55 @@ class _SectionListState extends State<SectionList> {
   }
 
   Widget buildFilterDropdown() {
-    return Row(
-      mainAxisAlignment: MainAxisAlignment.spaceAround,
-      children: [
-        const Text('Filter: '),
-        DropdownButton<String>(
-          value: selectedFilter,
-          onChanged: (String? newValue) {
-            setState(() {
-              selectedFilter = newValue!;
-            });
-          },
-          items: <String>['All', 'Electronics', 'Furniture']
-              .map<DropdownMenuItem<String>>((String value) {
-            return DropdownMenuItem<String>(
-              value: value,
-              child: Text(value),
-            );
-          }).toList(),
+    return Center(
+      child: Container(
+        width: 200,
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: [
+            const Text('Filter: '),
+            DropdownButton<String>(
+              value: selectedFilter,
+              onChanged: (String? newValue) {
+                setState(() {
+                  selectedFilter = newValue!;
+                });
+              },
+              items: <String>['All', 'Electronics', 'Furniture']
+                  .map<DropdownMenuItem<String>>((String value) {
+                return DropdownMenuItem<String>(
+                  value: value,
+                  child: Text(value),
+                );
+              }).toList(),
+            ),
+          ],
         ),
-      ],
+      ),
     );
   }
 
   Widget buildSortButton() {
-    return Row(
-      mainAxisAlignment: MainAxisAlignment.spaceAround,
-      children: [
-        const Text('Sort: '),
-        IconButton(
-          icon: Icon(
-            isAscending ? Icons.arrow_upward : Icons.arrow_downward,
-          ),
-          onPressed: () {
-            setState(() {
-              isAscending = !isAscending;
-            });
-          },
+    return Center(
+      child: Container(
+        width: 200,
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: [
+            const Text('Sort:'),
+            IconButton(
+              icon: Icon(
+                isAscending ? Icons.arrow_upward : Icons.arrow_downward,
+              ),
+              onPressed: () {
+                setState(() {
+                  isAscending = !isAscending;
+                });
+              },
+            ),
+          ],
         ),
-      ],
+      ),
     );
   }
 

@@ -49,7 +49,7 @@ class _ProductViewState extends State<ProductView> {
             Utils.sizeBoxHeight(20),
             Text(
               widget.name,
-              style: TextStyle(
+              style: const TextStyle(
                 fontWeight: FontWeight.bold,
                 fontSize: 24,
               ),
@@ -63,7 +63,7 @@ class _ProductViewState extends State<ProductView> {
               ),
             ),
             Utils.sizeBoxHeight(20),
-            Text(
+            const Text(
               'Description:',
               style: TextStyle(
                 fontWeight: FontWeight.bold,
@@ -80,21 +80,20 @@ class _ProductViewState extends State<ProductView> {
             ),
             Utils.sizeBoxHeight(20),
             ElevatedButton(
-              onPressed: () {
-                // Add functionality for adding the product to the cart or any other action
-              },
+              onPressed: () {},
               style: ElevatedButton.styleFrom(
                 backgroundColor: Theme.of(context).primaryColor,
                 shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(10.0),
                 ),
               ),
-              child: Padding(
+              child: const Padding(
                 padding: const EdgeInsets.all(12.0),
                 child: Text(
-                  'Add to Cart',
+                  'Buy Now',
                   style: TextStyle(
                     fontSize: 18,
+                    color: Colors.white,
                   ),
                 ),
               ),
