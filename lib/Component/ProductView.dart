@@ -1,7 +1,7 @@
 import 'package:ecommerce/Utils/Utils.dart';
 import 'package:flutter/material.dart';
 
-class ProductView extends StatefulWidget {
+class ProductView extends StatelessWidget {
   final String name;
   final double price;
   final String description;
@@ -16,15 +16,10 @@ class ProductView extends StatefulWidget {
   }) : super(key: key);
 
   @override
-  _ProductViewState createState() => _ProductViewState();
-}
-
-class _ProductViewState extends State<ProductView> {
-  @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(widget.name),
+        title: Text(name),
       ),
       body: SingleChildScrollView(
         padding: EdgeInsets.all(16.0),
@@ -39,7 +34,7 @@ class _ProductViewState extends State<ProductView> {
               child: ClipRRect(
                 borderRadius: BorderRadius.circular(12.0),
                 child: Image.asset(
-                  widget.image,
+                  image,
                   width: double.infinity,
                   height: 200,
                   fit: BoxFit.cover,
@@ -48,7 +43,7 @@ class _ProductViewState extends State<ProductView> {
             ),
             Utils.sizeBoxHeight(20),
             Text(
-              widget.name,
+              name,
               style: const TextStyle(
                 fontWeight: FontWeight.bold,
                 fontSize: 24,
@@ -56,7 +51,7 @@ class _ProductViewState extends State<ProductView> {
             ),
             Utils.sizeBoxHeight(10),
             Text(
-              'Price: \$${widget.price}',
+              'Price: \$${price}',
               style: TextStyle(
                 fontSize: 18,
                 color: Theme.of(context).primaryColor,
@@ -72,7 +67,7 @@ class _ProductViewState extends State<ProductView> {
             ),
             Utils.sizeBoxHeight(10),
             Text(
-              widget.description,
+              description,
               style: TextStyle(
                 fontSize: 16,
                 color: Colors.grey[700],

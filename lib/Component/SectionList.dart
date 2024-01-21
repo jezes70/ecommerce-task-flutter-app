@@ -14,6 +14,7 @@ class _SectionListState extends State<SectionList> {
   final PageController _pageController = PageController(viewportFraction: 0.9);
   String selectedFilter = 'All';
   bool isAscending = true;
+  TextEditingController searchController = TextEditingController();
 
   List<Product> getFilteredAndSortedProducts() {
     List<Product> filteredProducts = GetProduct.products;
@@ -23,6 +24,12 @@ class _SectionListState extends State<SectionList> {
           .where((product) => product.category == selectedFilter)
           .toList();
     }
+
+    filteredProducts = filteredProducts
+        .where((product) => product.name
+            .toLowerCase()
+            .contains(searchController.text.toLowerCase()))
+        .toList();
 
     filteredProducts.sort((a, b) {
       return isAscending
@@ -49,6 +56,7 @@ class _SectionListState extends State<SectionList> {
             Utils.sizeBoxHeight(10),
             buildFilterDropdown(),
             buildSortButton(),
+            buildSearchBar(),
             if (GetProduct.products.isNotEmpty)
               Container(
                 height: 400,
@@ -63,7 +71,7 @@ class _SectionListState extends State<SectionList> {
   Widget buildFilterDropdown() {
     return Center(
       child: Container(
-        width: 200,
+        width: 220,
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
@@ -75,8 +83,12 @@ class _SectionListState extends State<SectionList> {
                   selectedFilter = newValue!;
                 });
               },
-              items: <String>['All', 'Electronics', 'Furniture']
-                  .map<DropdownMenuItem<String>>((String value) {
+              items: <String>[
+                'All',
+                'Electronics',
+                'Furniture',
+                'Training Equipment',
+              ].map<DropdownMenuItem<String>>((String value) {
                 return DropdownMenuItem<String>(
                   value: value,
                   child: Text(value),
@@ -113,9 +125,31 @@ class _SectionListState extends State<SectionList> {
     );
   }
 
+  Widget buildSearchBar() {
+    return Center(
+      child: Container(
+        width: 300,
+        child: Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 16.0),
+          child: TextField(
+            controller: searchController,
+            decoration: const InputDecoration(
+              labelText: 'Search',
+              suffixIcon: Icon(Icons.search),
+            ),
+            onChanged: (value) {
+              setState(() {});
+            },
+          ),
+        ),
+      ),
+    );
+  }
+
   @override
   void dispose() {
     _pageController.dispose();
+    searchController.dispose();
     super.dispose();
   }
 }

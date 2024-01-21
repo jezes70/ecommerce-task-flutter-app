@@ -106,5 +106,59 @@ class GetProduct {
       image: 'images/Back Pack.jpg',
       category: 'Furniture',
     ),
+    Product(
+      id: 11,
+      name: 'Offices Table',
+      description:
+          'Redefine your workspace with our Offices Table collection. These tables are more than just furniture; they are functional pieces designed for productivity and style. Choose from modern designs and quality materials to create an office environment that reflects your professionalism. Elevate your work experience with Offices Table – where form meets function.',
+      price: 899.99,
+      image: 'images/Offices Table.jpeg',
+      category: 'Furniture',
+    ),
+    Product(
+      id: 12,
+      name: 'Fitclub Gym',
+      description:
+          'Join the Fitclub community and enhance your fitness routine with our Upright Bike. Engineered for performance and comfort, this bike offers a challenging cardio workout with adjustable resistance levels. Connect to Fitclub Gym for personalized workouts and track your progress. Elevate your fitness journey with technology-driven equipment that brings the gym experience to your home.',
+      price: 1255.99,
+      image: 'images/fitclub gym and upright bike.jpeg',
+      category: 'Training Equipment',
+    ),
+    Product(
+      id: 13,
+      name: 'Design Sofa',
+      description:
+          'Redefine the heart of your home with our Design Interior Sofa collection. Meticulously crafted for both style and comfort, these sofas blend seamlessly into your interior design. Choose from a range of designs and fabrics to match your aesthetic. Whether for relaxation or entertaining guests, our Design Interior Sofas make a statement in any living space.',
+      price: 1359.99,
+      image: 'images/Design Interior Sofa.jpeg',
+      category: 'Furniture',
+    ),
+    Product(
+      id: 14,
+      name: 'Commercial Gym',
+      description:
+          'Transform your fitness space with our Range of Quality Commercial Gym Equipment. Engineered for durability and performance, our selection includes state-of-the-art strength machines and cutting-edge cardio equipment. Elevate your gym to professional standards and provide members with a premium fitness experience. Equip your space with the tools that inspire a healthier lifestyle..',
+      price: 1605.99,
+      image: 'images/Commercial Gym.jpeg',
+      category: 'Training Equipment',
+    ),
+    Product(
+      id: 15,
+      name: 'Smart Camera',
+      description:
+          'Unleash your creativity with the Smart Camera. This compact and intelligent device redefines photography. Capture stunning moments with high-resolution images, and let smart features like facial recognition and scene optimization enhance your photos. Share your memories effortlessly through wireless connectivity. The Smart Camera is your perfect companion for capturing life is extraordinary moments.',
+      price: 952.99,
+      image: 'images/Smart Camara.jpg',
+      category: 'Electronics',
+    ),
+    Product(
+      id: 16,
+      name: 'LG Smart TV',
+      description:
+          'Elevate your entertainment experience with the LG Smart Television. Immerse yourself in breathtaking visuals and vibrant colors. This smart TV brings a world of content to your fingertips, allowing you to stream your favorite shows, movies, and apps seamlessly. With intuitive controls and sleek design, it is more than a television it is a portal to a smarter viewing experience.',
+      price: 504.99,
+      image: 'images/Smart Television.jpeg',
+      category: 'Electronics',
+    ),
   ];
 }

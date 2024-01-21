@@ -21,8 +21,8 @@ class HomeFirstState extends State<HomeFirst> {
       crossAxisAlignment: CrossAxisAlignment.stretch,
       children: <Widget>[
         Container(
-          height: 250,
-          margin: const EdgeInsets.only(bottom: 20, top: 20),
+          height: 300,
+          margin: const EdgeInsets.only(bottom: 10, top: 20),
           child: SingleChildScrollView(
             scrollDirection: Axis.horizontal,
             child: Row(
@@ -33,7 +33,7 @@ class HomeFirstState extends State<HomeFirst> {
                   onTap: () {},
                   child: Container(
                     width: 180,
-                    height: 220,
+                    height: 280,
                     margin: const EdgeInsets.symmetric(horizontal: 10),
                     decoration: BoxDecoration(
                       color: Colors.white,
