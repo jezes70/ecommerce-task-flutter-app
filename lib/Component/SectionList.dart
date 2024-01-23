@@ -42,10 +42,6 @@ class _SectionListState extends State<SectionList> {
 
   @override
   Widget build(BuildContext context) {
-    return buildMainUI(context);
-  }
-
-  Widget buildMainUI(BuildContext context) {
     return SingleChildScrollView(
       child: Container(
         alignment: Alignment.center,

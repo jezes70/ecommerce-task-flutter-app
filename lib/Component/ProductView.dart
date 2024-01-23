@@ -22,7 +22,7 @@ class ProductView extends StatelessWidget {
         title: Text(name),
       ),
       body: SingleChildScrollView(
-        padding: EdgeInsets.all(16.0),
+        padding: const EdgeInsets.all(16.0),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
@@ -83,7 +83,7 @@ class ProductView extends StatelessWidget {
                 ),
               ),
               child: const Padding(
-                padding: const EdgeInsets.all(12.0),
+                padding: EdgeInsets.all(12.0),
                 child: Text(
                   'Buy Now',
                   style: TextStyle(

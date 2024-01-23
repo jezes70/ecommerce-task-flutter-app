@@ -33,7 +33,7 @@ class AppState extends State<App> {
           ],
           elevation: 4,
           backgroundColor: Colors.orange,
-          iconTheme: IconThemeData(color: Colors.white),
+          iconTheme: const IconThemeData(color: Colors.white),
         ),
         body: SingleChildScrollView(
             child: Container(
